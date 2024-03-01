@@ -1,6 +1,6 @@
 from flask import Flask, render_template
-from .blueprints.vote.routes import vote_bp
-from .blueprints.leg.routes import leg_bp
+from app.blueprints.vote.routes import vote_bp
+from app.blueprints.leg.routes import leg_bp
 
 app = Flask(__name__)
 
