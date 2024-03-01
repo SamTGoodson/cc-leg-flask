@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template
-from utils.db import get_db_connection
+from app.utils.db import get_db_connection
+from . import vote_bp
+
 
 vote_bp = Blueprint('vote', __name__, template_folder='templates')
 
-@vote_bp.route('/vote')
+@vote_bp.route('/')
 def vote():
     conn = get_db_connection()
     cur = conn.cursor()

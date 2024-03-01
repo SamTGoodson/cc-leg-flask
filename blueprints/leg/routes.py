@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template
-from utils.db import get_db_connection
+from app.utils.db import get_db_connection
 
-leg_bp = Blueprint('vote', __name__, template_folder='templates')
+leg_bp = Blueprint('leg', __name__, template_folder='templates')
 
-@leg_bp.route('/leg')
+@leg_bp.route('/')
 def leg():
     conn = get_db_connection()
     cur = conn.cursor()
