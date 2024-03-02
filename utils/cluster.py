@@ -63,9 +63,9 @@ def start_hierarchical(close_votes):
 def make_base_map(df,CM_DATA,gdf):
     gdfe = gdf.to_crs(epsg=4326)
     df = df.reset_index()
-    master = pd.merge(CM_DATA, df, left_on='OfficeRecordFullName', right_on='VotePersonName', how='left')
-    master = master[['OfficeRecordFullName', 'District', 'h_cluster']].copy() 
-    master_map = pd.merge(gdfe, master, left_on='CounDist', right_on='District', how='left')
+    master = pd.merge(CM_DATA, df, left_on='council_member', right_on='council_member', how='left')
+    master = master[['council_member', 'district', 'h_cluster']].copy() 
+    master_map = pd.merge(gdfe, master, left_on='CounDist', right_on='district', how='left')
 
     return master_map
 
